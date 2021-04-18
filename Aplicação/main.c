@@ -3,6 +3,7 @@
 #include <string.h>
 #include <locale.h>
 #include <conio.h>
+
 /*
 ** CENTRO UNIVERSITÁRIO DOS GUARARAPES - UNIFG
 ** Técnicas de Programação
@@ -93,17 +94,32 @@ void menu(){
 	do{
 //		Opções na tela
 		system("cls");
-		printf("\n### MENU ###\n");
-		printf("\n1. Enviar mensagem");
-		printf("\n2. Listar mensagens enviadas");
-		printf("\n3. Apagar arquivo de mensagens enviadas");
-		printf("\n0. Sair\n");
-		printf("\n	### Digite apenas números ou será deslogado ###	\n");
-		
+		printf("===================================================");
+		printf("\n=                 Usuário - %s                 =\n",user.usuario);
+		printf("===================================================");
+		printf("\n=                      MENU                       =\n");
+		printf("===================================================");
+		printf("\n= 1 - Enviar mensagem                             =");
+		printf("\n= 2 - Listar mensagens enviadas                   =");
+		printf("\n= 3 - Apagar arquivo de mensagens enviadas        =");
+		printf("\n= 0 - Sair                                        =\n");
+		printf("===================================================\n");
+		printf("  -----------------------------------------------");
+		printf("\n  -   Digite apenas números ou será deslogado   -	\n");
+		printf("  -----------------------------------------------\n");
 //		Recebendo a Opção
 	
-		printf("\nEscolha uma Opção: ");
+		printf("\nEscolha uma Opção -> ");
 		scanf("%d",&op);
+		
+		if (op < 10) {
+			
+		}else {
+			system("cls");
+			printf("\nEscolha uma opção válida.\n\n");
+			system("pause");
+			menu();
+		}
 		
 	switch (op){
 		
@@ -112,7 +128,7 @@ void menu(){
 			system("cls");
 			printf("\nEscolha uma opção válida.\n\n");	
 			system("pause");
-			op = 0;
+			menu();
 			
 //				Enviar mensagem
 		case 1:
